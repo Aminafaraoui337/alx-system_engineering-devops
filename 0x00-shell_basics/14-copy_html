@@ -1,14 +1,2 @@
 #!/bin/bash
-source_dir=$(pwd)
-parent_dir=$(dirname "$source_dir")
-
-find "$source_dir" -name "*.html" -type f | while read file; do
-    target_file="$parent_dir/$(basename "$file")"
-
-    if [ ! -e "$target_file" ] || [ "$file" -nt "$target_file" ]; then
-        cp "$file" "$parent_dir"
-        echo "Copied: $file"
-    else
-        echo "Skipped: $file (up-to-date)"
-    fi
-done
+rsync -u --ignore-existing --include="*.html" --exclude="*" ./ ../
