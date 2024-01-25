@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# displays Best School 10 times.
+
+Cmpt=0
+while [ $Cmpt -lt 10 ]
+do
+    echo "Best School"
+    let Cmpt=Cmpt+1
+done
