@@ -5,5 +5,5 @@ Cmpt=10
 until [ $Cmpt -lt 1 ]
 do
     echo "Best School"
-    let Cmpt-=1
+    ((Cmpt--))
 done
